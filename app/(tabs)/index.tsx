@@ -1,27 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
+import Header from '@components/header/header'
+import { Box } from '@components/ui/box/box'
+import { Center } from '@components/ui/center'
+import { Text } from '@components/ui/text'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function TabOneScreen() {
 	return (
-		<View style={styles.container}>
-			<Text style={styles.title}>Tab One</Text>
-			<View style={styles.separator} />
-		</View>
+		<SafeAreaView>
+			<Box>
+				<Header />
+				<Center className='w-full h-full'>
+					<Text>Tab One</Text>
+				</Center>
+			</Box>
+		</SafeAreaView>
 	)
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	title: {
-		fontSize: 20,
-		fontWeight: 'bold',
-	},
-	separator: {
-		marginVertical: 30,
-		height: 1,
-		width: '80%',
-	},
-})

@@ -1,39 +1,36 @@
-import React from 'react'
-import FontAwesome from '@expo/vector-icons/FontAwesome'
-import { Link, Tabs } from 'expo-router'
-import { Pressable } from 'react-native'
-
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-	name: React.ComponentProps<typeof FontAwesome>['name']
-	color: string
-}) {
-	return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />
-}
+import { Tabs } from 'expo-router'
+import { TabBarIcon } from '@components/ui/tab-bar-icon/tab-bar-icon'
+import Header from '@components/header/header'
 
 export default function TabLayout() {
 	return (
-		<Tabs screenOptions={{}}>
+		<Tabs
+			screenOptions={{
+				tabBarStyle: { height: 80, paddingTop: 4 },
+				tabBarLabelStyle: { fontSize: 12 },
+			}}
+		>
 			<Tabs.Screen
 				name='index'
 				options={{
-					title: 'Tab One',
+					headerShown: false,
+					tabBarLabel: 'Tracker',
 					tabBarIcon: ({ color }) => (
-						<TabBarIcon name='code' color={color} />
+						<TabBarIcon name='clock-o' color={color} />
 					),
-					headerRight: () => (
-						<Link href='/modal' asChild>
-							<Pressable>
-								{({ pressed }) => (
-									<FontAwesome
-										name='info-circle'
-										size={25}
-										style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-									/>
-								)}
-							</Pressable>
-						</Link>
-					),
+					// headerRight: () => (
+					// 	<Link href='/modal' asChild>
+					// 		<Pressable>
+					// 			{({ pressed }) => (
+					// 				<FontAwesome
+					// 					name='info-circle'
+					// 					size={25}
+					// 					style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+					// 				/>
+					// 			)}
+					// 		</Pressable>
+					// 	</Link>
+					// ),
 				}}
 			/>
 			<Tabs.Screen
