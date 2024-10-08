@@ -1,9 +1,10 @@
 import { tva } from '@gluestack-ui/nativewind-utils/tva'
 
-export const textStyle = tva({
+export const headingStyle = tva({
+	base: 'text-typography-900 font-bold font-heading tracking-sm my-0',
 	variants: {
 		isTruncated: {
-			true: 'web:truncate',
+			true: 'truncate',
 		},
 		bold: {
 			true: 'font-bold',
@@ -14,19 +15,6 @@ export const textStyle = tva({
 		strikeThrough: {
 			true: 'line-through',
 		},
-		size: {
-			'2xs': 'text-2xs',
-			xs: 'text-xs',
-			sm: 'text-sm',
-			md: 'text-base',
-			lg: 'text-lg',
-			xl: 'text-xl',
-			'2xl': 'text-2xl',
-			'3xl': 'text-3xl',
-			'4xl': 'text-4xl',
-			'5xl': 'text-5xl',
-			'6xl': 'text-6xl',
-		},
 		sub: {
 			true: 'text-xs',
 		},
@@ -35,6 +23,17 @@ export const textStyle = tva({
 		},
 		highlight: {
 			true: 'bg-yellow-500',
+		},
+		size: {
+			'5xl': 'text-6xl',
+			'4xl': 'text-5xl',
+			'3xl': 'text-4xl',
+			'2xl': 'text-3xl',
+			xl: 'text-2xl',
+			lg: 'text-xl',
+			md: 'text-lg',
+			sm: 'text-base',
+			xs: 'text-sm',
 		},
 	},
 })

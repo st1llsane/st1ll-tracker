@@ -19,6 +19,7 @@ module.exports = function (api) {
 					extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
 					alias: {
 						'@': './app/',
+						'@screens': './screens/',
 						'@shared': './shared/',
 						'@screens': './screens/',
 						'@components': './components/',
